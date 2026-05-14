@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tetris - Controls Help</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#6f00be",
+                      "on-surface-variant": "#bdc8d1",
+                      "on-secondary-fixed": "#2c0051",
+                      "secondary-fixed": "#f0dbff",
+                      "on-background": "#e0e3e5",
+                      "on-primary-container": "#004965",
+                      "surface-variant": "#323537",
+                      "primary": "#8ed5ff",
+                      "error": "#ffb4ab",
+                      "surface-dim": "#101415",
+                      "on-surface": "#e0e3e5",
+                      "tertiary-container": "#f1a02b",
+                      "on-primary-fixed": "#001e2c",
+                      "surface-container-highest": "#323537",
+                      "background": "#101415",
+                      "outline-variant": "#3e484f",
+                      "on-primary-fixed-variant": "#004c69",
+                      "outline": "#87929a",
+                      "on-tertiary-fixed": "#2a1700",
+                      "on-error-container": "#ffdad6",
+                      "surface-bright": "#363a3b",
+                      "inverse-primary": "#00668a",
+                      "on-error": "#690005",
+                      "on-primary": "#00354a",
+                      "tertiary-fixed-dim": "#ffb960",
+                      "primary-container": "#38bdf8",
+                      "surface": "#101415",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "tertiary": "#ffc176",
+                      "on-tertiary-container": "#613b00",
+                      "secondary": "#ddb7ff",
+                      "inverse-surface": "#e0e3e5",
+                      "inverse-on-surface": "#2d3133",
+                      "surface-container-high": "#272a2c",
+                      "error-container": "#93000a",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-secondary": "#490080",
+                      "surface-container": "#1d2022",
+                      "secondary-fixed-dim": "#ddb7ff",
+                      "on-secondary-container": "#d6a9ff",
+                      "surface-tint": "#7bd0ff",
+                      "surface-container-lowest": "#0b0f10",
+                      "primary-fixed": "#c4e7ff",
+                      "on-secondary-fixed-variant": "#6900b3",
+                      "surface-container-low": "#191c1e",
+                      "primary-fixed-dim": "#7bd0ff",
+                      "on-tertiary": "#472a00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "panel-padding": "20px",
+                      "gutter": "16px",
+                      "unit": "4px",
+                      "block-size": "32px",
+                      "margin": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "stat-value": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "stat-value": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+        .neon-box-glow {
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+        .key-btn {
+            background-color: #334155;
+            border: 1px solid #F8FAFC;
+            transition: all 0.2s ease-in-out;
+        }
+        .key-btn:hover {
+            border-color: #38BDF8;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden relative">
+<!-- Top Navigation (Suppressed Bottom Nav for this linear/task-focused page) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-background border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button aria-label="Back" class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-display-lg text-display-lg text-primary uppercase tracking-widest neon-glow">TETRIS NEON</h1>
+</div>
+<div class="hidden md:flex items-center gap-4 text-on-surface-variant">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Help &amp; Controls</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[88px] px-margin pb-margin flex flex-col items-center justify-start relative w-full max-w-6xl mx-auto z-10">
+<!-- Grid Background Pattern for Theme -->
+<div class="absolute inset-0 pointer-events-none opacity-10" style="background-image: linear-gradient(#1E293B 1px, transparent 1px), linear-gradient(90deg, #1E293B 1px, transparent 1px); background-size: 32px 32px; z-index: -1;"></div>
+<div class="w-full flex flex-col lg:flex-row gap-gutter mt-8">
+<!-- Left Column: Controls -->
+<div class="flex-1 flex flex-col gap-gutter">
+<div class="bg-surface border border-outline-variant rounded-lg p-panel-padding neon-box-glow">
+<h2 class="font-label-mono text-label-mono text-on-surface-variant mb-6 uppercase tracking-wider border-b border-outline-variant pb-2">Keyboard Mapping</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Movement Keys -->
+<div class="space-y-4">
+<h3 class="font-headline-sm text-headline-sm text-primary">Movement</h3>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 key-btn rounded flex items-center justify-center text-on-background font-stat-value text-stat-value">
+<span class="material-symbols-outlined">arrow_upward</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="font-label-mono text-label-mono text-primary">Rotate Clockwise</p>
+<p class="text-on-surface-variant text-sm">Spins the active piece.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-1">
+<div class="w-12 h-12 key-btn rounded flex items-center justify-center text-on-background font-stat-value text-stat-value">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<div class="w-12 h-12 key-btn rounded flex items-center justify-center text-on-background font-stat-value text-stat-value">
+<span class="material-symbols-outlined">arrow_downward</span>
+</div>
+<div class="w-12 h-12 key-btn rounded flex items-center justify-center text-on-background font-stat-value text-stat-value">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="font-label-mono text-label-mono text-primary">Move / Soft Drop</p>
+<p class="text-on-surface-variant text-sm">Left/Right arrows move. Down arrow accelerates fall.</p>
+</div>
+</div>
+</div>
+<!-- Action Keys -->
+<div class="space-y-4">
+<h3 class="font-headline-sm text-headline-sm text-primary">Actions</h3>
+<div class="flex items-center gap-4">
+<div class="h-12 w-32 key-btn rounded flex items-center justify-center text-on-background font-stat-value text-stat-value px-4">
+                                    SPACE
+                                </div>
+<div class="flex-1">
+<p class="font-label-mono text-label-mono text-primary">Hard Drop</p>
+<p class="text-on-surface-variant text-sm">Instantly locks piece at the bottom.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 key-btn rounded flex items-center justify-center text-on-background font-stat-value text-stat-value">
+                                    C
+                                </div>
+<div class="flex-1">
+<p class="font-label-mono text-label-mono text-primary">Hold Piece</p>
+<p class="text-on-surface-variant text-sm">Swap current piece with held piece.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 key-btn rounded flex items-center justify-center text-on-background font-stat-value text-stat-value">
+                                    P
+                                </div>
+<div class="flex-1">
+<p class="font-label-mono text-label-mono text-primary">Pause Game</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Diagram Area (Placeholder for actual diagram image) -->
+<div class="bg-surface border border-outline-variant rounded-lg p-panel-padding h-64 relative overflow-hidden flex items-center justify-center">
+<img alt="A high-contrast top-down view of a mechanical keyboard illuminated by bright blue neon backlighting against a dark grey desk surface. The lighting creates a stark, tech-focused mood reminiscent of competitive gaming setups. Specific keys like the arrows and spacebar are subtly highlighted by the light's reflection, fitting a modern e-sports aesthetic." class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" data-alt="A high-contrast top-down view of a mechanical keyboard illuminated by bright blue neon backlighting against a dark grey desk surface. The lighting creates a stark, tech-focused mood reminiscent of competitive gaming setups. Specific keys like the arrows and spacebar are subtly highlighted by the light's reflection, fitting a modern e-sports aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQwGIpc9Z6kn3DVC6QA-P7FHsRkLOL12BA8O6lEQOm2ndEbiPiOL3HhZK2tlBxGCVqdua1A-LnORkD3JNH5wpQW3VysM8YV2BbLYy5RmX_HaLJIHIaLlIgYZxwvWcd8EIidVNmWasbMIWgCgaZ6eb8dbSV1XPxuZuj0e5t8faukY76jG84_b-HSkrwBkTu_OO89p0yKewklXmQNP4DzD3YHbuvnqkNk7YhDWdZbEHfI4Ba7_S9NsymBM84MsBUCCU-LMF_r6ERQsE"/>
+<div class="relative z-10 text-center">
+<span class="material-symbols-outlined text-display-lg text-primary mb-2 opacity-80" style="font-size: 64px;">keyboard</span>
+<p class="font-label-mono text-label-mono text-on-surface-variant tracking-widest uppercase">Diagram</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Rules & Scoring -->
+<div class="w-full lg:w-1/3 flex flex-col gap-gutter">
+<div class="bg-surface border border-outline-variant rounded-lg p-panel-padding">
+<h2 class="font-label-mono text-label-mono text-on-surface-variant mb-6 uppercase tracking-wider border-b border-outline-variant pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                        Rules of Play
+                    </h2>
+<div class="space-y-4">
+<p class="text-on-background">Maneuver the falling Tetrominoes (blocks) to form complete horizontal lines without any gaps.</p>
+<p class="text-on-background">When a line is completed, it clears from the board, and the blocks above fall down.</p>
+<p class="text-on-background border-l-2 border-primary pl-4 text-primary bg-primary/10 py-2">The game ends when the stack of blocks reaches the top of the playfield (Top Out).</p>
+</div>
+</div>
+<div class="bg-surface border border-outline-variant rounded-lg p-panel-padding flex-1">
+<h2 class="font-label-mono text-label-mono text-on-surface-variant mb-6 uppercase tracking-wider border-b border-outline-variant pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">military_tech</span>
+                        Scoring System
+                    </h2>
+<ul class="space-y-4">
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="text-on-background">Single Line</span>
+<span class="font-stat-value text-stat-value text-primary">100</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="text-on-background">Double Line</span>
+<span class="font-stat-value text-stat-value text-primary">300</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="text-on-background">Triple Line</span>
+<span class="font-stat-value text-stat-value text-primary">500</span>
+</li>
+<li class="flex justify-between items-center bg-primary/5 p-2 rounded">
+<span class="text-primary font-bold">TETRIS (4 Lines)</span>
+<span class="font-stat-value text-stat-value text-tertiary font-bold neon-glow">800</span>
+</li>
+</ul>
+<div class="mt-6 pt-4 border-t border-outline-variant text-sm text-on-surface-variant">
+                        * Scores are multiplied by your current Level.
+                    </div>
+</div>
+</div>
+</div>
+<div class="mt-12 mb-8">
+<button class="bg-[#334155] border border-[#F8FAFC] text-on-background font-headline-sm text-headline-sm px-8 py-4 rounded hover:border-[#38BDF8] hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] hover:text-primary transition-all duration-200 flex items-center gap-3 group">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                Back to Menu
+            </button>
+</div>
+</main>
+</body></html>
